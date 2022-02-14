@@ -231,5 +231,21 @@ namespace AlexFlipnote.NET
         /// </summary>       
         public async Task<MemoryStream> What(string imageUrl)
             => await RequestFunctions.ImageRequest($"what?image={imageUrl}", Token);
+        
+        /// <summary>
+        /// Returns a MemoryStream for an AlexFlipnote-styled png, meant to mock NFTs.
+        /// </summary>      
+        public async Task<MemoryStream> NFT(string hex, SeasonType season)
+            => await RequestFunctions.ImageRequest($"nft/{hex}/{season}", Token);
+        
+        /// <summary>
+        /// Returns an object with info relating to the meme NFT endpoint.
+        /// </summary>      
+        public async Task<NFT> HashNFT(string hash)
+        {
+            JObject data = await RequestFunctions.JObjectRequest($"nft?seed={hash}", Token);
+
+            return JsonConvert.DeserializeObject<NFT>(data.ToString());
+        }
     }    
 }

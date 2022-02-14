@@ -140,6 +140,6 @@ namespace AlexFlipnote.NET
         Christmas,
         Norway,
         Halloween,
-        None,
+        None
     }
 }

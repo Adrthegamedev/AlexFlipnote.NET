@@ -29,6 +29,18 @@ namespace AlexFlipnote.NET
             public int B { get; set; }
         }
     }
+    
+    public class NFT
+    {
+        [JsonProperty("hex")]
+        public string Hex { get; set; }
+        [JsonProperty("season")]
+        public string Season { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        [JsonProperty("image")]
+        public string ImageUrl { get; set; }
+    }
 
     /// <summary>
     /// Logo types for the Supreme endpoint.
@@ -113,5 +125,21 @@ namespace AlexFlipnote.NET
         Bone,
         OakLog,
         Random
+    }
+    
+    /// <summary>
+    /// Season options for the nft endpoint.
+    /// </summary>
+    public enum SeasonType
+    {
+        Winter,
+        Spring,
+        Summer,
+        Autumn,
+        April,
+        Christmas,
+        Norway,
+        Halloween,
+        None,
     }
 }
